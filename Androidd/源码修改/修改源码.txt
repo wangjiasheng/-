@@ -1,0 +1,4 @@
+http://www.jianshu.com/p/aeaceda41798
+http://blog.csdn.net/u013553529/article/details/54869238
+
+repo init -u https://aosp.tuna.tsinghua.edu.cn/platform/manifest -b android-7.1.1_r13

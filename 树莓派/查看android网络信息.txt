@@ -1,0 +1,2 @@
+adb shell 
+  getprop | grep wlan0

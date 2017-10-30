@@ -1,0 +1,10 @@
+startActivity(new Intent(ResetTransPasswordThirdActivity.this,
+                            SecurityCenterActivity.class));
+                    finish();
+
+
+linux查看当前activity   adb shell dumpsysactivity | grep mFocusedActivity
+windo查看当前activity   adb shell dumpsys activity | find "mFocusedActivity"
+
+
+

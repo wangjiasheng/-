@@ -1,0 +1,7 @@
+sudo mkfs -t ext4 /dev/sdb1 
+sudo mkfs.ext4 /dev/sdb1 
+//将U盘格式化为ext4格式
+sudo parted /dev/sdb1
+ p
+ q
+查看分区

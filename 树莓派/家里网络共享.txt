@@ -1,0 +1,6 @@
+
+ #sudo route add -net 0.0.0.0 metric 1 dev wlan0
+ sudo route del -net 192.168.43.0 netmask 255.255.255.0
+ sudo route add -net 192.168.43.0 netmask 255.255.255.0 metric 500 dev eth0
+ sudo route del default dev eth0 
+ sudo route add default metric 400 dev eth0

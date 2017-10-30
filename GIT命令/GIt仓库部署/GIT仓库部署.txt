@@ -1,0 +1,48 @@
+http://blog.csdn.net/tommy_wxie/article/details/38779667
+http://www.jianshu.com/p/27d8b8d1d571
+http://blog.csdn.net/pipisorry/article/details/52269785
+http://www.cnblogs.com/fatfatdachao/p/5597028.html
+
+git clone git@192.168.43.250:repositories
+git remote add test git@192.168.43.250:repositories
+git remote add HFBank git@192.168.43.250:codeofhenfeng
+git clone git@192.168.43.250:codeofhenfeng
+我的仓库路劲
+/home/git/repositories
+git config receive.denyCurrentBranch ignore
+
+/etc/passwd 加入   git:x:1001:1001:,,,:/home/git:/user/bin/git-shell
+/etc/sudoer 加入   git     ALL=(ALL:ALL) ALL
+
+
+
+sudo mkdir /home/repositories
+sudo chown git:git /home/repositories
+sudo chmod 700 /home/repositories
+
+sudo mkdir /home/git/codeofhenfeng
+sudo chown git:git /home/git/codeofhenfeng
+sudo chmod 700 /home/git/codeofhenfeng
+
+su git
+cd /home/repositories
+mkdir mytestproject.git 
+git init --bare 
+exit
+
+免密码操作  首先生成执行  ssh-keygen -t rsa -C “"314232332@qq.com"
+会在 C:\Users\wjs\.ssh 生成公钥和私钥
+将公钥和私钥复制到服务器 /home/git/.ssh 
+服务器端执行 cat id_rsa.pub > authorized_keys
+当添加多个验证文件时 使用命令 cat fileName >> authorized_keys
+
+目标用户（例如上面用到的git用户）的权限应该为 755
+.ssh 目录的权限应该为 755
+authorized_keys 文件的权限应该为 600
+
+.ssh目录是700，.ssh/id_rsa是600，.ssh/authorized_keys一定要是644，用户和用户组必须是本用户
+
+最后重启
+
+git rm -r --cached .
+git add .

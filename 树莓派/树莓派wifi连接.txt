@@ -1,0 +1,5 @@
+network={
+        ssid="HFBank"
+        identity="xinxiaoliang"
+        password="Abc12345"
+}

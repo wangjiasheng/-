@@ -1,0 +1,8 @@
+
+
+Usage: inet_route [-vF] del {-host|-net} Target[/prefix] [gw Gw] [metric M] [[dev] If]
+       inet_route [-vF] add {-host|-net} Target[/prefix] [gw Gw] [metric M]
+                              [netmask N] [mss Mss] [window W] [irtt I]
+                              [mod] [dyn] [reinstate] [[dev] If]
+       inet_route [-vF] add {-host|-net} Target[/prefix] [metric M] reject
+       inet_route [-FC] flush      NOT supported

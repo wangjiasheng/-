@@ -1,0 +1,81 @@
+git branch test //创建一个本地test分支
+git push origin test   //将本地test分支提交到远程服务器
+git branch -a  产看本地和远程分支
+git checkout test 切换到某个分支
+get branch -d test 删除某个分支
+git remote -v 查看origin含义
+git push origin :test和git branch -r -d origin  删除远程分支
+git绑定一个或者多个远程库 git remote add origin https://github.com/xxxx.git
+git查看远程库  git remote -v
+git删除远程库  git remote rm <远程库名>
+
+
+pwd 查看文件路径
+git init 可让代码可被管理
+touch readme.txt 创建文件
+git add readme.txt 将文件添加到仓库
+git commit -m "document" 将文件提交到仓库 -m代表提交说明
+git status 查看仓库状态
+git diff readme.txt 查看本地和仓库不同
+git log 查看提交日志
+git log --pretty=oneline 查看日志缩略形式
+git reset --hard HEAD^   上一个版本就是HEAD^，上上一个版本就是HEAD^^，100个版本HEAD~100
+git reset --hard 3628164 回到最新版本 3628164最新版本的id 号码
+git checkout --readme.txt git checkout -- file 恢复到缓存后的状态，去掉--就是切换版本库
+git reset HEAD readme.txt 可以从缓存区恢复
+
+rm test
+git rm test
+git commit -m "delete" 删除文件
+
+git remote add origin username@ip:xxx/xxx.git 关联一个远程库
+git push -u origin master   -u是在远程创建分支
+git clone username@i:xxx/xxx.git 克隆远程仓库
+
+git checkout -b dev 创建并切换分支
+git merge dev 将分支合并到master
+
+ git log --graph --pretty=oneline --abbrev-commit  查看分支合并情况
+ git merge --no-ff -m "merge with no-ff" dev 合并分支防止丢失
+Bug分支
+ git stash 将现场储存起来
+ git stash list 查看保存的现场
+ git stash pop 恢复现场 相当于git stash apply git stash drop
+
+ 默认标签 git tag v1.0
+ git tag查看标签
+ git tag xxx xxxxx 给xxxxxx的id打上xxx的标签
+ git show xxx xxx为tag名字
+ git tag -s v0.2 -m "signed version 0.2 released" fec145a GPG标签
+ git tag -d v0.1 删除标签
+ git push origin v1.0将标签推送到远程
+ git push origin --tags 推送全部标签
+ 删除远程标签要先删除本地标签然后删除远程标签  git push origin :refs/tags/v0.9
+
+ 关联多个远程仓库
+ git remote rm origin
+ 关联 github仓库
+ git remote add github git@github.com:michaelliao/learngit.git
+ 关联码云仓库
+ git remote add gitee git@gitee.com:liaoxuefeng/learngit.git
+ 查看所有仓库
+
+ git配置
+ git显示颜色
+ git config --global color.ui true
+ git忽略文件 .gitignore
+ https://github.com/github/gitignore
+ *.py[cod] 代表*.pyc *pyo *pyd 
+ 检验.gitignore的标准是git status命令是不是说working directory clean
+ 忽略的文件可以git add -f App.class强制加入git
+ 可以用git check-ignore命令检查是否输入错误
+ 
+ 起别名 敲git st就表示git status
+ git config --global alias.st status
+ git log -1 最后一次提交
+ git reflog 查看过去的提交
+
+
+ git diff HEAD -- readme.txt 和上一个版本对比
+
+git仓库优化 普通 git gc  深度git gc --aggressive

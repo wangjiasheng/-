@@ -1,0 +1,109 @@
+apt-get install lrzsz
+sz上传
+rz下载
+
+创建文件 touch
+
+好的文章
+
+intent七大属性 http://blog.csdn.net/u012702547/article/details/50178429
+
+
+http://raychase.iteye.com/blog/1998965
+
+
+
+
+
+
+
+
+
+
+
+
+内网配置   sudo ip route add default via 192.168.79.254
+
+  sudo ip link set wlan0 up
+
+  sudo wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wifi1.conf
+  sudo wpa_supplicant -i wlan1 -c /etc/wpa_supplicant2/wifi2.conf
+
+  iwconfig wlan1 essid "HFBank"
+  iwconfig wlan1 essid "hfmobile_staff_2.4G" key 123567890
+
+
+
+  sudo route add default gw 192.168.79.254 metric 20 wlan1
+  sudo route add -net 10.232.128.0 netmask 255.255.255.0 gw 192.168.1.1 metric 51 dev wlan0
+
+
+
+   ip route add 192.168.43.0/24 metric 300 dev eth0 proto kernel scope link src 192.168.43.250
+   ip route del default via 192.168.1.1 dev wlan0 
+   ip route del 192.168.43.0/24 dev eth0 proto kernel scope link src 192.168.43.250
+   ip route add 192.168.1.0/24 metric 301  dev wlan0 proto kernel scope link src 192.168.1.100
+   ip route del 192.168.1.0/24 metric 0  dev wlan0 proto kernel scope link src 192.168.1.100
+   ip route del 192.168.64.0/20 dev wlan1 proto kernel scope link src 192.168.68.216
+  ////////////////////////////////////////////
+    sudo ip route del default gw 192.168.79.254 metric 50 wlan1
+    sudo ip route del default via 192.168.1.1 dev wlan0
+    sudo ip address add -net 10.232.128.0 netmask 255.255.255.0 gw 192.168.1.1 metric 51 dev wlan0
+
+
+
+  ip route add default dev wlan1 via 192.168.79.254 metric 20
+  ////////////////////////////////////////////
+ 
+
+  sudo route del default dev eth0 
+  sudo route del default dev wlan1
+  sudo route del default dev wlan0
+
+  sudo route del -net 192.168.1.0 gw 0.0.0.0 netmask 255.255.255.0 metric 303 dev wlan0
+  sudo route del -net 192.168.64.0 netmask 255.255.240.0 gw 0.0.0.0 metric 304  dev wlan1
+
+
+
+route del -net 192.168.1.0 netmask 255.255.255.0 gw 0.0.0.0 metric 303 dev wlan0
+route del -net 192.168.1.0 netmask 255.255.255.0 gw 0.0.0.0 metric 304 dev wlan0
+
+  
+
+
+
+  
+
+
+
+
+  sudo service isc-dhcp-server start
+
+  sudo route del -net 10.232.128.0 netmask 255.255.255.0 gw 192.168.1.1 metric 201 dev wlan0
+
+
+
+sudo route add -net 192.168.43.0 netmask 255.255.255.0 metric 250  dev eth0
+
+
+
+
+route add default metric 225 dev wlan1
+
+http://10.232.128.110:8180/v1/app/products
+
+route del default dev eth0
+route del default dev wlan1
+
+
+sudo route del default netmask 0.0.0.0 metric 303 dev wlan0
+sudo route del -net 192.168.43.0 gw 0.0.0.0 netmask 255.255.255.0 metric 202 dev eth0 
+
+
+sudo route del -net 192.168.64.0 netmask 255.255.240.0 gw 192.168.79.254 metric 303  dev wlan0
+sudo route del -net 192.168.64.0 netmask 255.255.240.0 gw 0.0.0.0 metric 303  dev wlan0
+
+
+http://blog.csdn.net/hunanchenxingyu/article/details/42472213
+
+
